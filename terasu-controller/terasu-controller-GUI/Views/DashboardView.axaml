@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:terasu_controller_GUI.ViewModels"
+             x:Class="terasu_controller_GUI.Views.DashboardView"
+             x:DataType="vm:DashboardViewModel">
+  <Grid RowDefinitions="Auto,*" ColumnDefinitions="*">
+    <StackPanel Orientation="Horizontal" Spacing="8" Margin="12">
+      <TextBlock Text="Dashboard" FontSize="20" FontWeight="Bold"/>
+      <Button Content="Refresh" Command="{Binding Refresh}"/>
+    </StackPanel>
+    <Grid Row="1" Margin="12">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Border Classes="Card" Margin="6" Padding="12">
+        <StackPanel>
+          <TextBlock Text="Total Requests"/>
+          <TextBlock Text="{Binding Snapshot.TotalRequests, TargetNullValue=0}" FontSize="24"/>
+        </StackPanel>
+      </Border>
+      <Border Classes="Card" Margin="6" Padding="12" Grid.Column="1">
+        <StackPanel>
+          <TextBlock Text="Uptime (s)"/>
+          <TextBlock Text="{Binding Snapshot.UptimeSec, TargetNullValue=0}" FontSize="24"/>
+        </StackPanel>
+      </Border>
+      <Border Classes="Card" Margin="6" Padding="12" Grid.Column="2">
+        <StackPanel>
+          <TextBlock Text="Bytes Out"/>
+          <TextBlock Text="{Binding Snapshot.BytesOut, TargetNullValue=0}" FontSize="24"/>
+        </StackPanel>
+      </Border>
+    </Grid>
+  </Grid>
+</UserControl>
+
+

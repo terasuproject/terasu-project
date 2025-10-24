@@ -1,0 +1,29 @@
+listen: 0.0.0.0:8080
+mode: list # all | list
+intercept_list:
+  - docker.io
+  - registry-1.docker.io
+  - auth.docker.io
+  - github.com
+  - ghcr.io
+ca:
+  cert_file: /data/ca.pem
+  key_file: /data/ca.key
+  auto_generate: true
+security:
+  basic_auth:
+    enabled: false
+    username: ""
+    password: ""
+limits:
+  max_conns: 4096
+  read_timeout: 15s
+  write_timeout: 30s
+logging:
+  level: info
+metrics:
+  addr: 0.0.0.0:9090
+dns:
+  mode: auto # terasu | system | auto
+
+

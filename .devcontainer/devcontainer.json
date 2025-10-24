@@ -1,0 +1,21 @@
+{
+  "name": "terasu-proxy dev",
+  "build": {
+    "dockerfile": "../terasu-proxy/Dockerfile",
+    "context": "..",
+    "args": { "GO_VERSION": "1.24" }
+  },
+  "workspaceFolder": "/workspaces/terasu-project",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspaces/terasu-project,type=bind,consistency=cached",
+    "source=terasu-proxy-data,target=/data,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": ["golang.Go", "ms-azuretools.vscode-docker"]
+    }
+  },
+  "postCreateCommand": "cd terasu-proxy && go mod tidy && go build -ldflags='-checklinkname=0' ./cmd/terasu-proxy"
+}
+
+

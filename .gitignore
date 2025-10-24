@@ -1,0 +1,53 @@
+# OS / Editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+.vs/
+.cursor/
+.VSCodeCounter/
+data/
+
+
+# Logs / temp
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.cer
+
+# Go
+go.work
+go.work.sum
+*.test
+
+# .NET / Avalonia
+**/bin/
+**/obj/
+**/out/
+*.user
+*.suo
+*.csproj.user
+*.DotSettings.user
+
+# Debug symbols
+*.pdb
+*.dSYM/
+
+# Build outputs (project-specific)
+terasu-proxy/terasu-proxy
+
+# Node (just in case)
+node_modules/
+
+

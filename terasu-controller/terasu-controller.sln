@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "terasu-controller-core", "terasu-controller-core\terasu-controller-core.csproj", "{A16D4505-9F21-4167-9F86-6249D3BB7555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "terasu-controller-CLI", "terasu-controller-CLI\terasu-controller-CLI.csproj", "{8830B048-7643-4DEB-9141-AA0D0C2F934E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "terasu-controller-GUI", "terasu-controller-GUI\terasu-controller-GUI.csproj", "{CC7D4264-0359-4532-96BF-06B3DB56B3B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A16D4505-9F21-4167-9F86-6249D3BB7555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A16D4505-9F21-4167-9F86-6249D3BB7555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A16D4505-9F21-4167-9F86-6249D3BB7555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A16D4505-9F21-4167-9F86-6249D3BB7555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8830B048-7643-4DEB-9141-AA0D0C2F934E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8830B048-7643-4DEB-9141-AA0D0C2F934E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8830B048-7643-4DEB-9141-AA0D0C2F934E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8830B048-7643-4DEB-9141-AA0D0C2F934E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC7D4264-0359-4532-96BF-06B3DB56B3B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC7D4264-0359-4532-96BF-06B3DB56B3B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC7D4264-0359-4532-96BF-06B3DB56B3B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC7D4264-0359-4532-96BF-06B3DB56B3B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

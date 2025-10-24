@@ -1,0 +1,35 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:terasu_controller_GUI.ViewModels"
+             x:Class="terasu_controller_GUI.Views.SettingsView"
+             x:DataType="vm:SettingsViewModel">
+  <StackPanel Margin="12" Spacing="8">
+    <StackPanel Orientation="Horizontal" Spacing="8">
+      <TextBlock Text="Listen" Width="120"/>
+      <TextBox Text="{Binding Listen}" Width="260"/>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" Spacing="8">
+      <TextBlock Text="Metrics" Width="120"/>
+      <TextBox Text="{Binding MetricsAddr}" Width="260"/>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" Spacing="8">
+      <TextBlock Text="DNS" Width="120"/>
+      <ComboBox SelectedItem="{Binding DnsMode}" MinWidth="120">
+        <ComboBoxItem Content="auto"/>
+        <ComboBoxItem Content="terasu"/>
+        <ComboBoxItem Content="system"/>
+      </ComboBox>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" Spacing="8">
+      <CheckBox Content="Basic Auth" IsChecked="{Binding BasicAuthEnabled}"/>
+      <TextBox Watermark="username" Width="140" Text="{Binding BasicUser}"/>
+      <TextBox Watermark="password" Width="140" Text="{Binding BasicPass}"/>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" Spacing="8">
+      <Button Content="Save" Command="{Binding Save}"/>
+      <Button Content="Save &amp; Restart" Command="{Binding SaveAndRestart}"/>
+    </StackPanel>
+  </StackPanel>
+</UserControl>
+
+

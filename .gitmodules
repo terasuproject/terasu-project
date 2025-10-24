@@ -1,0 +1,7 @@
+[submodule "terasu"]
+	path = terasu
+	url = https://github.com/fumiama/terasu.git
+	shallow = true
+	branch = main
+
+

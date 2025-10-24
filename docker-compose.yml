@@ -1,0 +1,57 @@
+version: "3.8"
+services:
+  terasu-proxy:
+    build:
+      context: ./
+      dockerfile: ./terasu-proxy/Dockerfile
+      args:
+        - GO_VERSION=1.24
+    image: terasu-proxy:dev
+    container_name: terasu-proxy
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    volumes:
+      - terasu-proxy-data:/data
+      - ./terasu-proxy/config.example.yaml:/etc/terasu-proxy/config.yaml:ro
+    environment:
+      - TERASU_PROXY_DNS_MODE=system
+    restart: unless-stopped
+
+  tester:
+    image: curlimages/curl:8.8.0
+    container_name: terasu-proxy-tester
+    depends_on:
+      - terasu-proxy
+    environment:
+      - HTTP_PROXY=http://terasu-proxy:8080
+      - HTTPS_PROXY=http://terasu-proxy:8080
+      - NO_PROXY=localhost,127.0.0.1,terasu-proxy
+    entrypoint: ["sh","-c"]
+    command: ["mkdir -p /usr/local/share/ca-certificates && cp /ca/ca.pem /usr/local/share/ca-certificates/terasu-proxy.crt 2>/dev/null || true; update-ca-certificates --fresh 2>/dev/null || true; echo 'HTTP:'; curl -sS http://example.com -o /dev/null -w '%{http_code}\n'; echo 'HTTPS:'; curl -sS https://www.google.com -o /dev/null -w '%{http_code}\n' || curl -sS https://github.com -o /dev/null -w '%{http_code}\n'"]
+    networks:
+      - default
+    volumes:
+      - terasu-proxy-data:/ca
+
+  terasu-controller:
+    build:
+      context: ./
+      dockerfile: ./terasu-controller/Dockerfile
+      args:
+        - DOTNET_SDK_TAG=9.0
+        - GO_VERSION=1.24
+    image: terasu-controller:dev
+    container_name: terasu-controller
+    depends_on:
+      - terasu-proxy
+    environment:
+      - TERASU_PROXY_BIN=/usr/local/bin/terasu-proxy
+    volumes:
+      - terasu-proxy-data:/data
+    restart: unless-stopped
+
+volumes:
+  terasu-proxy-data: {}
+
+
