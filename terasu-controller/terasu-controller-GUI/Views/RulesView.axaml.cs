@@ -1,16 +1,12 @@
 using Avalonia.Controls;
 
-namespace terasu_controller_GUI.Views;
-
-public partial class RulesView : UserControl
+namespace terasu_controller_GUI.Views
 {
-    public RulesView()
+    public partial class RulesView : UserControl
     {
-        InitializeComponent();
+        public RulesView()
+        {
+            InitializeComponent();
+        }
     }
 }
-
-
-
-
-

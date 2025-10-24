@@ -1,16 +1,12 @@
 using Avalonia.Controls;
 
-namespace terasu_controller_GUI.Views;
-
-public partial class SettingsView : UserControl
+namespace terasu_controller_GUI.Views
 {
-    public SettingsView()
+    public partial class SettingsView : UserControl
     {
-        InitializeComponent();
+        public SettingsView()
+        {
+            InitializeComponent();
+        }
     }
 }
-
-
-
-
-

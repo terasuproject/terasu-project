@@ -1,30 +1,28 @@
 using System.Net.Http;
 
-namespace Terasu.Controller.Core.Health;
-
-public sealed class HealthClient
+namespace Terasu.Controller.Core.Health
 {
-    private readonly HttpClient _http = new();
-    private readonly Uri _base;
-
-    public HealthClient(string baseAddress = "http://127.0.0.1:9090")
+    public sealed class HealthClient
     {
-        _base = new Uri(baseAddress.TrimEnd('/'));
-    }
+        private readonly HttpClient _http = new();
+        private readonly Uri _base;
 
-    public async Task<bool> CheckAsync(CancellationToken ct = default)
-    {
-        try
+        public HealthClient(string baseAddress = "http://127.0.0.1:9090")
         {
-            using var resp = await _http.GetAsync(new Uri(_base, "/healthz"), ct);
-            return resp.IsSuccessStatusCode;
+            _base = new Uri(baseAddress.TrimEnd('/'));
         }
-        catch
+
+        public async Task<bool> CheckAsync(CancellationToken ct = default)
         {
-            return false;
+            try
+            {
+                using HttpResponseMessage resp = await _http.GetAsync(new Uri(_base, "/healthz"), ct);
+                return resp.IsSuccessStatusCode;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
-
-
-

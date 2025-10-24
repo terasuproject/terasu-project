@@ -3,23 +3,18 @@
              xmlns:vm="using:terasu_controller_GUI.ViewModels"
              x:Class="terasu_controller_GUI.Views.CertificatesView"
              x:DataType="vm:CertificatesViewModel">
-  <StackPanel Margin="12" Spacing="8">
-    <StackPanel Orientation="Horizontal" Spacing="8">
-      <TextBlock Text="CA Path" Width="120"/>
-      <TextBlock Text="{Binding CertPath}"/>
+    <StackPanel Margin="12" Spacing="8">
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <TextBlock Text="CA Path" Width="120" />
+            <TextBlock Text="{Binding CertPath}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <TextBlock Text="Thumbprint" Width="120" />
+            <TextBlock Text="{Binding Thumbprint}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <Button Content="Generate" Command="{Binding Generate}" />
+            <Button Content="Install" Command="{Binding Install}" />
+        </StackPanel>
     </StackPanel>
-    <StackPanel Orientation="Horizontal" Spacing="8">
-      <TextBlock Text="Thumbprint" Width="120"/>
-      <TextBlock Text="{Binding Thumbprint}"/>
-    </StackPanel>
-    <StackPanel Orientation="Horizontal" Spacing="8">
-      <Button Content="Generate" Command="{Binding Generate}"/>
-      <Button Content="Install" Command="{Binding Install}"/>
-    </StackPanel>
-  </StackPanel>
 </UserControl>
-
-
-
-
-

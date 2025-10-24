@@ -1,16 +1,12 @@
 using Avalonia.Controls;
 
-namespace terasu_controller_GUI.Views;
-
-public partial class CertificatesView : UserControl
+namespace terasu_controller_GUI.Views
 {
-    public CertificatesView()
+    public partial class CertificatesView : UserControl
     {
-        InitializeComponent();
+        public CertificatesView()
+        {
+            InitializeComponent();
+        }
     }
 }
-
-
-
-
-

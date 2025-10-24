@@ -1,16 +1,12 @@
 using Avalonia.Controls;
 
-namespace terasu_controller_GUI.Views;
-
-public partial class DiagnosticsView : UserControl
+namespace terasu_controller_GUI.Views
 {
-    public DiagnosticsView()
+    public partial class DiagnosticsView : UserControl
     {
-        InitializeComponent();
+        public DiagnosticsView()
+        {
+            InitializeComponent();
+        }
     }
 }
-
-
-
-
-

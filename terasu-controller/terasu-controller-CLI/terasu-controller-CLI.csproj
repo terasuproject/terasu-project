@@ -16,7 +16,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\terasu-controller-core\terasu-controller-core.csproj" />
+        <ProjectReference Include="..\terasu-controller-core\terasu-controller-core.csproj"/>
     </ItemGroup>
 
 </Project>

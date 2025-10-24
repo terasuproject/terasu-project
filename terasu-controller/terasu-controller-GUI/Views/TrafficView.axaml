@@ -3,52 +3,49 @@
              xmlns:vm="using:terasu_controller_GUI.ViewModels"
              x:Class="terasu_controller_GUI.Views.TrafficView"
              x:DataType="vm:TrafficViewModel"
-            x:Name="Root"
-            Tag="{Binding Snapshot.TotalRequests, TargetNullValue=1}">
-  <Grid Margin="12">
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="2*"/>
-      <ColumnDefinition Width="3*"/>
-    </Grid.ColumnDefinitions>
-    <StackPanel Spacing="6">
-      <Border Classes="Card">
-        <StackPanel>
-          <TextBlock Text="Total Requests"/>
-          <TextBlock Text="{Binding Snapshot.TotalRequests, TargetNullValue=0}" FontSize="22"/>
-        </StackPanel>
-      </Border>
-      <Border Classes="Card">
-        <StackPanel>
-          <TextBlock Text="Codes"/>
-          <ItemsControl ItemsSource="{Binding Codes}">
-            <ItemsControl.ItemTemplate>
-              <DataTemplate>
-                <StackPanel Orientation="Horizontal" Spacing="8">
-                  <TextBlock Text="{Binding Code}" Width="48"/>
-                  <ProgressBar Minimum="0" Maximum="{Binding ElementName=Root, Path=Tag, FallbackValue=1}" Value="{Binding Count}" Height="6" Width="180"/>
-                  <TextBlock Text="{Binding Count}"/>
+             x:Name="Root"
+             Tag="{Binding Snapshot.TotalRequests, TargetNullValue=1}">
+    <Grid Margin="12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Spacing="6">
+            <Border Classes="Card">
+                <StackPanel>
+                    <TextBlock Text="Total Requests" />
+                    <TextBlock Text="{Binding Snapshot.TotalRequests, TargetNullValue=0}" FontSize="22" />
                 </StackPanel>
-              </DataTemplate>
-            </ItemsControl.ItemTemplate>
-          </ItemsControl>
+            </Border>
+            <Border Classes="Card">
+                <StackPanel>
+                    <TextBlock Text="Codes" />
+                    <ItemsControl ItemsSource="{Binding Codes}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBlock Text="{Binding Code}" Width="48" />
+                                    <ProgressBar Minimum="0"
+                                                 Maximum="{Binding ElementName=Root, Path=Tag, FallbackValue=1}"
+                                                 Value="{Binding Count}" Height="6" Width="180" />
+                                    <TextBlock Text="{Binding Count}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
         </StackPanel>
-      </Border>
-    </StackPanel>
-    <Border Classes="Card" Grid.Column="1">
-      <StackPanel>
-        <TextBlock Text="Top Hosts"/>
-        <DataGrid ItemsSource="{Binding TopHosts}" AutoGenerateColumns="False" IsReadOnly="True" Height="320">
-          <DataGrid.Columns>
-            <DataGridTextColumn Header="Host" Binding="{Binding Host}" Width="3*"/>
-            <DataGridTextColumn Header="Req" Binding="{Binding Req}" Width="*"/>
-          </DataGrid.Columns>
-        </DataGrid>
-      </StackPanel>
-    </Border>
-  </Grid>
+        <Border Classes="Card" Grid.Column="1">
+            <StackPanel>
+                <TextBlock Text="Top Hosts" />
+                <DataGrid ItemsSource="{Binding TopHosts}" AutoGenerateColumns="False" IsReadOnly="True" Height="320">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Host" Binding="{Binding Host}" Width="3*" />
+                        <DataGridTextColumn Header="Req" Binding="{Binding Req}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+    </Grid>
 </UserControl>
-
-
-
-
-

@@ -1,16 +1,12 @@
 using Avalonia.Controls;
 
-namespace terasu_controller_GUI.Views;
-
-public partial class TrafficView : UserControl
+namespace terasu_controller_GUI.Views
 {
-    public TrafficView()
+    public partial class TrafficView : UserControl
     {
-        InitializeComponent();
+        public TrafficView()
+        {
+            InitializeComponent();
+        }
     }
 }
-
-
-
-
-

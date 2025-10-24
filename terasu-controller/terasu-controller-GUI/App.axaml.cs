@@ -4,26 +4,27 @@ using Avalonia.Markup.Xaml;
 using terasu_controller_GUI.ViewModels;
 using terasu_controller_GUI.Views;
 
-namespace terasu_controller_GUI;
-
-public partial class App : Application
+namespace terasu_controller_GUI
 {
-    public override void Initialize()
+    public partial class App : Application
     {
-        AvaloniaXamlLoader.Load(this);
-    }
-
-    public override void OnFrameworkInitializationCompleted()
-    {
-        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+        public override void Initialize()
         {
-            desktop.MainWindow = new MainWindow
-            {
-                DataContext = new MainWindowViewModel(),
-            };
+            AvaloniaXamlLoader.Load(this);
         }
 
-        base.OnFrameworkInitializationCompleted();
-    }
+        public override void OnFrameworkInitializationCompleted()
+        {
+            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+            {
+                desktop.MainWindow = new MainWindow
+                {
+                    DataContext = new MainWindowViewModel()
+                };
+            }
 
+            base.OnFrameworkInitializationCompleted();
+        }
+
+    }
 }

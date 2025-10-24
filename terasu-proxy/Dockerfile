@@ -26,6 +26,3 @@ EXPOSE 8080 9090
 ENTRYPOINT ["/usr/local/bin/terasu-proxy"]
 CMD ["-config","/etc/terasu-proxy/config.yaml"]
 
-
-
-

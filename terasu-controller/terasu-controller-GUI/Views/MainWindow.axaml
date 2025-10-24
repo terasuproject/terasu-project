@@ -2,7 +2,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:terasu_controller_GUI.ViewModels"
         xmlns:models="using:terasu_controller_GUI.Models"
-        xmlns:views="using:terasu_controller_GUI.Views"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
@@ -14,20 +13,20 @@
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <vm:MainWindowViewModel />
     </Design.DataContext>
 
     <TabControl ItemsSource="{Binding Tabs}" SelectedItem="{Binding Selected}">
-      <TabControl.ItemTemplate>
-        <DataTemplate x:DataType="models:TabPage">
-          <TextBlock Text="{Binding Title}"/>
-        </DataTemplate>
-      </TabControl.ItemTemplate>
-      <TabControl.ContentTemplate>
-        <DataTemplate x:DataType="models:TabPage">
-          <ContentControl Content="{Binding Content}"/>
-        </DataTemplate>
-      </TabControl.ContentTemplate>
+        <TabControl.ItemTemplate>
+            <DataTemplate x:DataType="models:TabPage">
+                <TextBlock Text="{Binding Title}" />
+            </DataTemplate>
+        </TabControl.ItemTemplate>
+        <TabControl.ContentTemplate>
+            <DataTemplate x:DataType="models:TabPage">
+                <ContentControl Content="{Binding Content}" />
+            </DataTemplate>
+        </TabControl.ContentTemplate>
     </TabControl>
 
 </Window>

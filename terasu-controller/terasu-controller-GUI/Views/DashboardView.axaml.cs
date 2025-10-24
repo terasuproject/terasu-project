@@ -1,16 +1,12 @@
 using Avalonia.Controls;
 
-namespace terasu_controller_GUI.Views;
-
-public partial class DashboardView : UserControl
+namespace terasu_controller_GUI.Views
 {
-    public DashboardView()
+    public partial class DashboardView : UserControl
     {
-        InitializeComponent();
+        public DashboardView()
+        {
+            InitializeComponent();
+        }
     }
 }
-
-
-
-
-

@@ -1,12 +1,10 @@
-namespace terasu_controller_core.Proxy;
-
-public interface IProxyManager
+namespace terasu_controller_core.Proxy
 {
-    Task StartAsync(string? dnsMode = null, bool? disableIPv6 = null, CancellationToken ct = default);
-    Task StopAsync(CancellationToken ct = default);
-    Task<bool> IsRunningAsync(CancellationToken ct = default);
-    Task<int?> GetProcessIdAsync(CancellationToken ct = default);
+    public interface IProxyManager
+    {
+        Task StartAsync(string? dnsMode = null, bool? disableIPv6 = null, CancellationToken ct = default);
+        Task StopAsync(CancellationToken ct = default);
+        Task<bool> IsRunningAsync(CancellationToken ct = default);
+        Task<int?> GetProcessIdAsync(CancellationToken ct = default);
+    }
 }
-
-
-

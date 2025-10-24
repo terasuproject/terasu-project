@@ -6,25 +6,23 @@
              mc:Ignorable="d"
              x:Class="terasu_controller_GUI.Views.LogsView"
              x:DataType="vm:LogsViewModel">
-  <Grid RowDefinitions="Auto,*" Margin="12">
-    <StackPanel Orientation="Horizontal" Spacing="8">
-      <TextBlock Text="Logs" FontSize="18" FontWeight="Bold"/>
-      <TextBox Width="240" Watermark="Filter..." Text="{Binding Filter, Mode=TwoWay}"/>
-      <Button Content="Clear" Command="{Binding Clear}"/>
-    </StackPanel>
-    <DataGrid Grid.Row="1" ItemsSource="{Binding Items}" AutoGenerateColumns="False" IsReadOnly="True">
-      <DataGrid.Columns>
-        <DataGridTextColumn Header="Time" Binding="{Binding Ts}" Width="*"/>
-        <DataGridTextColumn Header="Host" Binding="{Binding Host}" Width="2*"/>
-        <DataGridTextColumn Header="Method" Binding="{Binding Method}" Width="*"/>
-        <DataGridTextColumn Header="Path" Binding="{Binding Path}" Width="3*"/>
-        <DataGridTextColumn Header="Code" Binding="{Binding Code}" Width="*"/>
-        <DataGridTextColumn Header="Ms" Binding="{Binding Ms}" Width="*"/>
-        <DataGridTextColumn Header="In" Binding="{Binding BytesIn}" Width="*"/>
-        <DataGridTextColumn Header="Out" Binding="{Binding BytesOut}" Width="*"/>
-      </DataGrid.Columns>
-    </DataGrid>
-  </Grid>
+    <Grid RowDefinitions="Auto,*" Margin="12">
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <TextBlock Text="Logs" FontSize="18" FontWeight="Bold" />
+            <TextBox Width="240" Watermark="Filter..." Text="{Binding Filter, Mode=TwoWay}" />
+            <Button Content="Clear" Command="{Binding Clear}" />
+        </StackPanel>
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Items}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Time" Binding="{Binding Ts}" Width="*" />
+                <DataGridTextColumn Header="Host" Binding="{Binding Host}" Width="2*" />
+                <DataGridTextColumn Header="Method" Binding="{Binding Method}" Width="*" />
+                <DataGridTextColumn Header="Path" Binding="{Binding Path}" Width="3*" />
+                <DataGridTextColumn Header="Code" Binding="{Binding Code}" Width="*" />
+                <DataGridTextColumn Header="Ms" Binding="{Binding Ms}" Width="*" />
+                <DataGridTextColumn Header="In" Binding="{Binding BytesIn}" Width="*" />
+                <DataGridTextColumn Header="Out" Binding="{Binding BytesOut}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
 </UserControl>
-
-
